@@ -11,7 +11,9 @@ class Header extends Component {
                 <p className="title">
                     Starlink Tracker at UT-Austin
                 </p>
+
             </header>
+
         )
     }
 }
