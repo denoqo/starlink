@@ -17,7 +17,9 @@ function App() {
         <div>
             The satellite positions is real-time data from N2YO API.
             The world map is visualized with D3-geo library.
-            The app is build with ReactJS with Ant Design.
+        </div>
+        <div>
+            The front-end is build with ReactJS and deployed on AWS Amplify with proxy to N2YO for data.
         </div>
         <Main />
         <Footer />
