@@ -12,4 +12,3 @@ AWS Amplify: [https://dev.d1c9zjt1pxslss.amplifyapp.com/](https://dev.d1c9zjt1px
 Runs the app in the development mode.\
 Open `http://localhost:3000` to view it in your browser.
 
-
