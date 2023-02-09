@@ -1,4 +1,4 @@
-# Startlink at UT-Austin <img src="/src/assets/images/starlink_logo.png" align="right" height="115" /></a>
+# Startlink at UT-Austin <img src="/src/assets/images/starlink_logo.png" align="right" width="300" /></a>
 
 
 ### Introduction
