@@ -10,7 +10,7 @@ function App() {
     <div className="App">
         <Header />
         <div>
-            Starlink tracker is a frond-end project that
+            Starlink tracker is a front-end project that
             visualize the real-time positions of
             running satellites around the earth right now.
         </div>
