@@ -15,11 +15,14 @@ function App() {
             running satellites around the earth right now.
         </div>
         <div>
-            The satellite positions is real-time data from N2YO API.
-            The world map is visualized with D3-geo library.
+            The real-time satellite positions is from N2YO API.
+            The world map is visualized with D3-geo.
+            The front-end is build with ReactJS and deployed on AWS Amplify.
+
         </div>
+
         <div>
-            The front-end is build with ReactJS and deployed on AWS Amplify with proxy to N2YO for data.
+            Click "Find Satellite" -> Select "STARLINKs" -> Click "Track" -> Selected Satellites (represented by dots) with show up on the world map and moving.
         </div>
         <Main />
         <Footer />
