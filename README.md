@@ -2,7 +2,7 @@
 
 
 ### Introduction
-Starlink tracker is a front-end project that visualize the real-time positions of running satellites around the earth right now.
+Starlink tracker is a front-end project that visualize the real-time positions of running satellites around the earth.
 
 ### Online Version
 AWS Amplify: [https://dev.d1c9zjt1pxslss.amplifyapp.com/](https://dev.d1c9zjt1pxslss.amplifyapp.com/)
