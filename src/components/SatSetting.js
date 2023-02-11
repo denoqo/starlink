@@ -99,7 +99,7 @@ class SatSetting extends Component {
                            message: "Please input your Duration",
                        }
                    ]}
-                   initialValue={50}
+                   initialValue={10}
                >
                    <InputNumber min={0} max={90}
                                 style={{width: "100%"}}
