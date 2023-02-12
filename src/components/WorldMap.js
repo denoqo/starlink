@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Spin } from 'antd';
 import { feature } from 'topojson-client';
-import {geoKavrayskiy7, geoNicolosi} from 'd3-geo-projection';
+import { geoKavrayskiy7, geoNicolosi} from 'd3-geo-projection';
 import { geoGraticule, geoPath } from 'd3-geo';
 import { select as d3Select } from 'd3-selection';
 import { schemeCategory10 } from 'd3-scale-chromatic';
@@ -36,6 +36,7 @@ class WorldMap extends Component {
             .get(WORLD_MAP_URL)
             .then((res) => {
                 const { data } = res;
+                // convert to topology json
                 const land = feature(data, data.objects.countries).features;
                 this.generateMap(land);
             })
@@ -127,7 +128,7 @@ class WorldMap extends Component {
             });
 
             i += 60;
-        }, 1000);
+        }, 1000); // unit: ms; so it's every second
     };
 
     drawSat = (sat, pos) => {
@@ -194,7 +195,7 @@ class WorldMap extends Component {
         land.forEach((ele) => {
             context.fillStyle = '#FCD299';
             context.strokeStyle = '#000';
-            context.globalAlpha = 0.7;
+            context.globalAlpha = 1;
             context.beginPath();
             path(ele);
             context.fill();
