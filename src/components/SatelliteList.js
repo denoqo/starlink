@@ -12,19 +12,27 @@ class SatelliteList extends Component {
     }
 
     onChange = (e) => {
+        // event has both data name and checked status
         const { dataInfo, checked } = e.target;
         const { selected } = this.state;
         const list = this.addOrRemove(dataInfo, checked, selected);
         this.setState({ selected: list });
     };
 
+    // adjust selected satellites by checked/unchecked item
+    // list.some  ==> anyof()
+    // list.filter ==> 
     addOrRemove = (item, status, list) => {
+        // some() method returns true if at least one element in the array 
+        // satisfies the condition specified in the callback function
         const found = list.some((entry) => entry.satid === item.satid);
         if (status && !found) {
             list = [...list, item];
         }
 
         if (!status && found) {
+            //  create a new array that contains 
+            // all the elements of an existing array that satisfy a certain condition. 
             list = list.filter((entry) => {
                 return entry.satid !== item.satid;
             });
@@ -32,6 +40,7 @@ class SatelliteList extends Component {
         return list;
     };
 
+    // callback function to set up satalite list
     onShowSatMap = () => {
         this.props.onShowMap(this.state.selected);
     };
