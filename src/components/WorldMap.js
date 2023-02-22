@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Spin } from 'antd';
 import { feature } from 'topojson-client';
-import { geoKavrayskiy7, geoNicolosi} from 'd3-geo-projection';
+import { geoNicolosi} from 'd3-geo-projection';
 import { geoGraticule, geoPath } from 'd3-geo';
 import { select as d3Select } from 'd3-selection';
 import { schemeCategory10 } from 'd3-scale-chromatic';
@@ -82,6 +82,10 @@ class WorldMap extends Component {
                 })
                 .catch((e) => {
                     console.log('err in fetch satellite position -> ', e.message);
+                });
+                this.setState({
+                    isLoading: false,
+                    isDrawing: false,
                 });
         }
     }
@@ -172,24 +176,30 @@ class WorldMap extends Component {
     }
 
     generateMap = (land) => {
-        const projection = geoKavrayskiy7()
+
+        // 1 get project
+        const projection = geoNicolosi()
             .scale(170)
             .translate([width / 2, height / 2])
             .precision(0.1);
 
         const graticule = geoGraticule();
 
+        // 2 Get canvas for plot (canvas is in ref )
         const canvas = d3Select(this.refMap.current)
             .attr('width', width)
             .attr('height', height);
-
         const canvas2 = d3Select(this.refTrack.current)
             .attr('width', width)
             .attr('height', height);
 
+            
+
         const context = canvas.node().getContext('2d');
         const context2 = canvas2.node().getContext('2d');
 
+
+        // 3 Start draw with geoPath
         let path = geoPath().projection(projection).context(context);
 
         land.forEach((ele) => {
