@@ -2,11 +2,16 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Spin } from 'antd';
 import { feature } from 'topojson-client';
+
+
+
 import { geoNicolosi} from 'd3-geo-projection';
 import { geoGraticule, geoPath } from 'd3-geo';
 import { select as d3Select } from 'd3-selection';
-import { schemeCategory10 } from 'd3-scale-chromatic';
+
 import * as d3Scale from 'd3-scale';
+import { schemeCategory10 } from 'd3-scale-chromatic';
+
 import { timeFormat as d3TimeFormat } from 'd3-time-format';
 
 import {
